@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#06163b">
+  <meta name="description" content="配對 WE GO-6 五位成員的人類與動物形態，再用十道小題認識這群準備出道的虛擬偶像。">
+  <title>WEGO-6!</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2306163b'/%3E%3Cpath d='M13 14l11 8 8-11 8 11 11-8-3 26c-1 9-8 14-16 14s-15-5-16-14z' fill='%237cff68'/%3E%3Ccircle cx='25' cy='34' r='3' fill='%2306163b'/%3E%3Ccircle cx='39' cy='34' r='3' fill='%2306163b'/%3E%3Cpath d='M27 43h10l-5 5z' fill='%2306163b'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="style.css?v=12">
+</head>
+<body>
+  <div class="noise" aria-hidden="true"></div>
+  <header class="topbar">
+    <a class="brand" href="#" id="brand-home" aria-label="返回遊戲首頁">
+      <span class="brand-mark">WG6</span>
+      <span>IDENTITY CHECK</span>
+    </a>
+    <div class="top-status">
+      <span class="live-dot" aria-hidden="true"></span>
+      <span id="top-stage">等待辨識</span>
+      <strong id="top-score">00</strong>
+    </div>
+  </header>
+
+  <main id="app" tabindex="-1">
+    <section class="screen intro-screen is-active" id="intro-screen" aria-labelledby="intro-title">
+      <div class="intro-copy">
+        <div class="title-lockup" aria-hidden="true"><span>WEGO</span><b>–6!</b></div>
+        <h1 id="intro-title">WEGO-6!</h1>
+        <p class="worldview-line">在二十三世紀⋯「人類能變成萬物」！</p>
+
+        <div class="transformation-stage" role="img" aria-label="狼被螺旋光環包圍，短暫保留狼耳與尾巴後變身為男子">
+          <picture>
+            <source media="(prefers-reduced-motion: reduce)" srcset="assets/transformation-animal-3d.png">
+            <img class="transform-morph" src="assets/transformation-morph.webp?v=13" alt="" fetchpriority="high" decoding="async">
+          </picture>
+          <span class="transform-label">ANIMAL ↝ HUMAN</span>
+        </div>
+
+        <section class="mission-briefing" aria-labelledby="mission-rule">
+          <p class="arrival-chime">叮叮🔔你已成功登陸二十三世紀。</p>
+          <p>歡迎來到這個萬物可變的世界🌌</p>
+          <h2 id="mission-rule">這個世界默認的規則是：「人類可以變身為萬物。」</h2>
+          <p>在這裡生活的人可以在「人類」和「狼」的形態之間切換自如，就像你所嚮往的自由生活一樣。</p>
+
+          <p>身為來自二十一世紀的時空旅人，想要和這裡的住民建立聯結，僅僅遠遠望見身影遠遠不夠。<br>
+          你需要瞭解關於他們的一些事情，這會有助於與他們打交道。<br>
+          因此，你將通過一系列的考驗，運用你的直覺和智識來辨別這些狼少年們，一點點收集每位狼少年的信息碎片。<br>
+          你收集到的信息碎片越多，和他們的距離也就越近。</p>
+
+          <p class="mission-ready">——任務加載完畢，開始收集檔案🐺</p>
+        </section>
+
+        <div class="nickname-step" id="nickname-step">
+          <label for="nickname"><span>STEP 0</span> 先留下你的暱稱 ✍️</label>
+          <div class="nickname-input-wrap"><input id="nickname" name="nickname" type="text" maxlength="16" autocomplete="nickname" placeholder="輸入暱稱，製作你的通行證"><span id="nickname-count">0 / 16</span></div>
+          <p id="nickname-hint">結束時會把名字印在你的二十三世紀身份證上。</p>
+        </div>
+
+        <fieldset class="preference-card is-locked" id="preference-card">
+          <legend><span>0</span> 進場前先選邊站</legend>
+          <div class="preference-options">
+            <button class="pref-button" type="button" data-pref="貓派" disabled><span>CAT</span>貓派</button>
+            <button class="pref-button" type="button" data-pref="狗派" disabled><span>DOG</span>狗派</button>
+            <button class="pref-button" type="button" data-pref="我是大人我全都要" disabled><span>BOTH</span>我是大人我全都要</button>
+          </div>
+        </fieldset>
+
+        <div class="intro-visual cover-poster" aria-label="WE GO-6 團體封面圖">
+          <div class="photo-stamp">FIRST CONTACT<br>2026.09</div>
+          <img src="assets/cover-poster.jpg" alt="WE GO-6 五位成員的漫畫風格封面圖" loading="lazy" decoding="async">
+          <div class="intro-ticket">
+            <span>PLAY TIME</span><strong>3–5 MIN</strong>
+            <span>FULL SCORE</span><strong>25 PTS</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="screen match-screen" id="match-screen" aria-labelledby="match-title">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">ROUND 01 // 形態配對</p>
+          <h2 id="match-title"><span>挑戰你的直覺🔥</span><br>什麼動物會變成什麼人形？把他們連起來吧！</h2>
+          <p>先選上方的動物，再選下方的人類。五條線全部連好後，答案才會一起揭曉。</p>
+        </div>
+        <div class="round-counter"><strong id="match-count">0</strong><span>/ 5 PAIRS</span></div>
+      </div>
+
+      <p class="mobile-pan-note">← 左右滑動查看全部 →</p>
+      <div class="connect-scroll">
+        <div class="connect-board" id="connect-board">
+          <svg class="link-layer" id="link-layer" aria-hidden="true"></svg>
+          <div class="match-row animal-row">
+            <h3><span>A</span> ANIMAL FORM</h3>
+            <div class="card-grid" id="animal-grid"></div>
+          </div>
+          <div class="connection-zone" aria-hidden="true"><span>CONNECT THE IDENTITIES</span></div>
+          <div class="match-row human-row">
+            <h3><span>B</span> HUMAN FORM</h3>
+            <div class="card-grid" id="human-grid"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="feedback-bar" id="match-feedback" role="status" aria-live="polite">點一張動物卡開始。</div>
+      <div class="match-actions is-hidden" id="match-actions">
+        <button class="secondary-button" id="retry-match" type="button">重新連線</button>
+        <button class="primary-button" id="to-emoji" type="button">繼續挑戰🐺 <span>→</span></button>
+      </div>
+    </section>
+
+    <section class="screen emoji-screen" id="emoji-screen" aria-labelledby="emoji-title">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">ROUND 02 // SIGNAL CODE</p>
+          <h2 id="emoji-title"><span>訊號配對時間📡</span><br>誰的代表 emoji 是什麼？</h2>
+          <p>先從中間選一個代表 emoji，再點擊成員圖像。五組完成後一次揭曉。</p>
+        </div>
+        <div class="round-counter"><strong id="emoji-count">0</strong><span>/ 5 PAIRS</span></div>
+      </div>
+      <div class="emoji-layout">
+        <div class="emoji-member-grid emoji-top" id="emoji-top"></div>
+        <div class="emoji-bank" id="emoji-bank" aria-label="代表 emoji 選項"></div>
+        <div class="emoji-member-grid emoji-bottom" id="emoji-bottom"></div>
+      </div>
+      <div class="feedback-bar" id="emoji-feedback" role="status" aria-live="polite">先選一個代表 emoji，再點一位成員。</div>
+      <div class="match-actions is-hidden" id="emoji-actions">
+        <button class="secondary-button" id="retry-emoji" type="button">重新配對</button>
+        <button class="primary-button" id="to-quiz" type="button">進入快問快答 <span>→</span></button>
+      </div>
+    </section>
+
+    <section class="screen quiz-screen" id="quiz-screen" aria-labelledby="quiz-title">
+      <div class="quiz-progress-wrap">
+        <div class="quiz-progress-meta"><span id="quiz-kicker">ROUND 03</span><strong><span id="quiz-number">1</span> / 10</strong></div>
+        <div class="progress-track" aria-hidden="true"><span id="progress-fill"></span></div>
+      </div>
+      <div class="quiz-layout">
+        <div class="question-panel">
+          <p class="question-label" id="question-label">FIRST IMPRESSION</p>
+          <h2 id="quiz-title">載入題目中⋯</h2>
+          <p id="question-hint"></p>
+        </div>
+        <div class="answers-panel" id="answers-panel" aria-live="polite"></div>
+      </div>
+      <div class="answer-reveal is-hidden" id="answer-reveal" role="status" aria-live="polite">
+        <div><span id="reveal-mark">CORRECT</span><strong id="reveal-title"></strong><p id="reveal-copy"></p></div>
+        <button class="primary-button" id="next-question" type="button">下一題 <span>→</span></button>
+      </div>
+    </section>
+
+    <section class="screen result-screen" id="result-screen" aria-labelledby="result-title">
+      <div class="celebration-layer" id="celebration-layer" aria-hidden="true"></div>
+      <div class="result-hero">
+        <p class="eyebrow">IDENTITY CHECK COMPLETE · 點擊通行證查看背面</p>
+        <div class="passport-scene">
+          <div class="passport-card" id="passport-card" role="button" tabindex="0" aria-label="二十三世紀身份通行證，點擊查看背面" aria-pressed="false">
+            <div class="passport-inner">
+              <section class="passport-face passport-front">
+                <div class="passport-holo" aria-hidden="true"></div>
+                <div class="passport-topline"><span>WEGO-6 // ACCESS PASS</span><b>23C</b></div>
+                <div class="passport-main">
+                  <div class="passport-score" aria-label="測驗分數"><span id="result-score">00</span><small>/ 25</small></div>
+                  <div class="passport-info">
+                    <span class="passport-label">HOLDER</span><strong id="result-name">—</strong>
+                    <span class="passport-label">TITLE</span><h2 id="result-title">狼群觀察員</h2>
+                  </div>
+                </div>
+                <p id="result-message"></p>
+                <div class="result-tags"><span id="result-pref">你的派系：—</span><span id="result-matches">形態：—</span><span id="result-emoji">Emoji：—</span><span id="result-quiz">問答：—</span></div>
+                <div class="passport-footer"><span>VALID FOR ALL FORMS</span><span id="passport-code">WG6-0000</span></div>
+              </section>
+              <section class="passport-face passport-back" aria-hidden="true">
+                <div class="passport-holo" aria-hidden="true"></div>
+                <span class="back-code">23RD CENTURY · IDENTITY VERIFIED</span>
+                <div class="back-mark">WG6</div>
+                <p>presented by SALLY.</p>
+                <small>HUMAN CAN BECOME ANYTHING.</small>
+              </section>
+            </div>
+          </div>
+        </div>
+        <p class="passport-tip">移動游標讓鐳射流動 · 點擊即可翻面</p>
+        <button class="primary-button" id="restart-game" type="button">再玩一次 <span>↻</span></button>
+      </div>
+
+      <section class="overview-section" aria-labelledby="overview-title">
+        <div class="section-head compact">
+          <div><p class="eyebrow">CHEAT SHEET // 一眼記住</p><h2 id="overview-title">五位成員速覽</h2></div>
+        </div>
+        <div class="overview-table-wrap">
+          <table class="overview-table">
+            <thead><tr><th>成員</th><th>代表 Emoji</th><th>動物形態</th><th>團內印象</th><th>記憶關鍵詞</th></tr></thead>
+            <tbody>
+              <tr><td><strong>WOOYEON</strong><span>우연</span></td><td class="emoji-cell">🍙</td><td>雪橇犬系狼形態</td><td>大哥 · 主唱感</td><td>3:33 幸運、唱歌、作詞</td></tr>
+              <tr><td><strong>XIU</strong><span>시우</span></td><td class="emoji-cell">😈</td><td>柴犬系狼形態</td><td>隊長 · 舞蹈線</td><td>運動、辣食、怕鬼怕高</td></tr>
+              <tr><td><strong>TAEGANG</strong><span>태강</span></td><td class="emoji-cell">🍊</td><td>牛頭梗系狼形態</td><td>氣氛製造者</td><td>料理、圖畫日記、搖滾</td></tr>
+              <tr><td><strong>ZERO</strong><span>제로 · Zero Lee</span></td><td class="emoji-cell">🍍</td><td>黑貓系狼形態</td><td>音樂製作</td><td>DailyLog、爵士、Cantabile</td></tr>
+              <tr><td><strong>KUTA</strong><span>쿠우타</span></td><td class="emoji-cell">🪽</td><td>耳廓狐系狼形態</td><td>日本成員 · 忙內</td><td>雙語日記、奶茶、不吃辣</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="learn-section" aria-labelledby="learn-title">
+        <div class="section-head compact">
+          <div><p class="eyebrow">DEBRIEF // 現在正式認識他們</p><h2 id="learn-title">五份成員檔案</h2></div>
+          <p class="data-note">資料整理截至 2026.09</p>
+        </div>
+        <div class="member-profiles" id="member-profiles"></div>
+      </section>
+
+      <section class="group-facts" aria-labelledby="group-facts-title">
+        <div class="group-facts-image"><img src="assets/group-workshop.jpg" alt="WE GO-6 成員在戶外工作坊的合照" loading="lazy" decoding="async"></div>
+        <div class="group-facts-copy">
+          <p class="eyebrow">ABOUT THE PACK</p>
+          <h2 id="group-facts-title">WE GO-6 위고식스</h2>
+          <p>由韓國新創公司 23rd Century Kids 打造的五人虛擬偶像團體。世界觀核心是「人類能變成萬物」：人類形態之外，成員目前最常以狼群世界裡的動物形態活動。</p>
+          <dl>
+            <div><dt>2025.03.09</dt><dd>企劃首次直播</dd></div>
+            <div><dt>2026.05.03</dt><dd>現成員體制重新開始固定直播</dd></div>
+            <div><dt>2026.10</dt><dd>預定正式出道</dd></div>
+          </dl>
+          <p class="small-note">成員也會不定期在個人 X 開 Space 聲音直播；固定節目與時間可能隨出道準備調整。</p>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <footer><span>UNOFFICIAL FAN-MADE INTRO GAME · MADE BY SALLY</span><span>WE GO, WE GO-6!</span></footer>
+  <script src="app.js?v=12"></script>
+</body>
+</html>
