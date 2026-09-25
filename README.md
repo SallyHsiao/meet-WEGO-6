@@ -1,4 +1,4 @@
-# WEGO-6! 🐺
+# Let's meet WEGO-6! 🐺
 
 [English](#english) · [繁體中文](#繁體中文)
 
